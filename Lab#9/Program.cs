@@ -68,6 +68,7 @@ void SwitchFirstMenu(ParkingLot parkingLot)
     switch (FirstMenu())
     {
         case 1:
+            Console.Clear();
             Console.Write("\nIngrese la placa del vehículo: ");
             string plate = Console.ReadLine();
             Console.Write("\nIngrese el nombre del vehículo: ");
@@ -76,6 +77,7 @@ void SwitchFirstMenu(ParkingLot parkingLot)
             parkingLot.AddVehicle(vehicle);
             break;
         case 2:
+            Console.Clear();
             Console.Write("\nIngrese la placa del vehículo a retirar: ");
             string plateToRemove = Console.ReadLine();
             parkingLot.RemoveVehicle(plateToRemove);

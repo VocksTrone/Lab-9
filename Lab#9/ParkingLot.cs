@@ -43,24 +43,23 @@ namespace Lab_9
             else
             {
                 WaitingList.AddVehicle(vehicle);
-                Console.WriteLine($"Estacionamiento Lleno, {vehicle.Name} ({vehicle.Plate}) se ha Añadido a la Lista de Espera");
+                Console.WriteLine($"\nEstacionamiento Lleno, {vehicle.Name} ({vehicle.Plate}) se ha Añadido a la Lista de Espera");
             }
             Console.ReadKey();
         }
 
         public void RemoveVehicle(string plate)
         {
-            Console.Clear();
             Vehicles vehicle = ParkinLotVehicles.DeleteVehicle(plate);
             if (vehicle != null)
             {
                 BackupHistorial.Stack(vehicle);
-                Console.WriteLine($"{vehicle.Name} ({vehicle.Plate}) ha Salido del Estacionamiento");
+                Console.WriteLine($"\n{vehicle.Name} ({vehicle.Plate}) ha Salido del Estacionamiento");
                 if (!WaitingList.IsEmpty())
                 {
                     Vehicles waitingVehicle = WaitingList.DeleteFirst();
                     ParkinLotVehicles.AddVehicle(waitingVehicle);
-                    Console.WriteLine($"{waitingVehicle.Name} ({waitingVehicle.Plate}) Ingresó desde la Lista de Espera");
+                    Console.WriteLine($"\n{waitingVehicle.Name} ({waitingVehicle.Plate}) Ingresó desde la Lista de Espera");
                 }
             }
             else

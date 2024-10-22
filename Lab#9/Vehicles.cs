@@ -15,5 +15,9 @@ namespace Lab_9
             Plate = plate;
             Name = name;
         }
+        public string OverrideInfo()
+        {
+            return $"{Name} ({Plate})";
+        }
     }
 }

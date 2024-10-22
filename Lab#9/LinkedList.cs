@@ -100,7 +100,7 @@ namespace Lab_9
             {
                 while (actualVehicle != null)
                 {
-                    Console.WriteLine(actualVehicle.Vehicle);
+                    Console.WriteLine(actualVehicle.Vehicle.OverrideInfo());
                     actualVehicle = actualVehicle.Next;
                 }
             }
